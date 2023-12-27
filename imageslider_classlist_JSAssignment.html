@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Slider 2 </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        .container .container-slide .slides{
+            position: absolute;
+            height: 100%;
+        }
+        .container-slide{
+            display: none;
+        }
+        .active{
+            display: block;
+        }
+        .container .container-slide .slides img{
+            width: 100%;
+            /* height: 100%; */
+            transition: all 1s linear;
+        }
+        .container .btn{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 0 auto;
+            position: absolute;
+            bottom: -15%;
+            /* left: 0; */
+            /* right: 0; */
+            /* bottom: -2%; */
+        }
+        .container .btn i{
+            margin-inline: 25px;
+            background-color: #333;
+            font-size: 25px;
+            color: white;
+            padding: 5px 35px;
+        }
+        .container .btn .left,.right{
+            font-size: 20px;
+            color: white;
+            margin: 0 25px;
+            background-color: #000;
+            border-radius: 5px;
+            padding: 15px;
+        }
+        .left:hover,.right:hover{
+            background-color: linear-gradient(to right, #fff, #52af2e);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <div class="main">
+        <div class="box">
+            <img src="https://img.freepik.com/free-photo/digital-painting-mountain-with-colorful-tree-foreground_1340-25699.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1696636800&semt=ais" alt="">
+            <img src="https://wallpapers.com/images/featured/nature-scenes-pictures-9rw9nkdf1ks812fw.jpg" alt="">
+            <img src="https://i.ytimg.com/vi/BHACKCNDMW8/maxresdefault.jpg" alt="">
+            <img src="https://images-cdn.ubuy.co.in/63d8c31fa39aef3cb261197f-leyiyi-8x6ft-natural-scenery-backdrop-3d.jpg" alt="">
+           <div class="btn">
+            <i class="fa-sharp fa-solid fa-arrow-left left"></i>
+            <i class="fa-sharp fa-solid fa-arrow-right right"></i>
+           </div>
+        </div>
+    </div> -->
+
+    <div class="container">
+        <div class="container-slide active">
+            <div class="slides">
+                <div class="image">
+                    <img src="https://images.hdqwalls.com/wallpapers/little-fancy-fish.jpg" alt="">
+                </div>
+            </div>
+        </div> 
+        <div class="container-slide">
+            <div class="slides">
+                <div class="image">
+                    <img src="https://images.hdqwalls.com/wallpapers/dolphin-jumping-out-of-water-3u.jpg" alt="">
+                </div>
+            </div>
+        </div> 
+        <div class="container-slide">
+            <div class="slides">
+                <div class="image">
+                    <img src="https://images.hdqwalls.com/wallpapers/heart-tree-field-4k-cm.jpg" alt="">
+                </div>
+            </div>
+        </div>
+         <div class="container-slide">
+            <div class="slides">
+                <div class="image">
+                    <img src="https://images.hdqwalls.com/wallpapers/cute-owl.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="btn">
+            <div id="left" onclick="left()">  <i class="fa-sharp fa-solid fa-arrow-left"></i></div>
+            <div id="right" onclick="right()"> <i class="fa-sharp fa-solid fa-arrow-right"></i> </div>
+        </div>
+    </div>
+
+    <script>
+        let slides = document.querySelectorAll('.container-slide')
+        let index = 0;
+
+        function right(){
+            slides[index].classList.remove('active')
+            index = (index + 1) % slides.length;
+            slides[index].classList.add('active')
+        }
+        function left(){
+            slides[index].classList.remove('active')
+            index = (index - 1 + slides.length) % slides.length;
+            slides[index].classList.add('active')
+        }
+    </script>
+</body>
+</html>

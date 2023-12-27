@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Marksheet | Javascript Assignment </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            width: 50%;
+            margin: 20% auto;
+            border: 1px solid black;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .main p{
+            text-align: center;
+            margin: 20px 0;
+        }
+        .main  .marks{
+            width: 90%;
+            
+        }
+        .main  .marks .sub{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 5px;
+        }
+        .main  .marks .sub label{
+            width: 50%;
+        }
+        .main  .marks .sub input{
+            width: 50%;
+        }
+        .main .marks button{
+            width: 100%;
+            padding: 5px 0;
+        margin: 10px 0;
+           
+        }
+        .main .marks .ans{
+            display: flex;
+            justify-content: space-around;
+        }
+        .main .marks .ans p{
+            width: 50%;
+        }
+        .main .marks .ans p span{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+  <div class="main">
+    <h2> Marksheet for Information Technology </h2>
+    <p> Enter Marks </p>
+
+    <div class="marks">
+
+        <div class="sub">
+           <label for=""> 1. C Language: </label>
+           <input type="text" id="sub1">
+        </div>
+        <div class="sub">
+            <label for=""> 2. C++ Language: </label>
+            <input type="text" id="sub2">
+         </div>
+         <div class="sub">
+            <label for=""> 3. Database: </label>
+            <input type="text" id="sub3">
+         </div>
+         <div class="sub">
+            <label for=""> 4. HTML: </label>
+            <input type="text" id="sub4">
+         </div>
+         <div class="sub">
+            <label for=""> 5. CSS: </label>
+            <input type="text" id="sub5">
+         </div>
+         <div class="sub">
+            <label for=""> 6. Php: </label>
+            <input type="text" id="sub6">
+         </div>
+         <div class="sub">
+            <label for=""> 7. Core Java: </label>
+            <input type="text" id="sub7">
+         </div>
+     
+         <button onclick="result()"> Result </button>
+         <div class="ans">
+            <p> Total is: <span id="total"> </span> / 350</p>
+            <p> Percentage: <span id="percent"> </span></p>
+         </div>
+
+    </div>
+  </div>
+
+<script>
+    function result(){
+
+        var sub1 = Number(document.getElementById("sub1").value);
+        var sub2 = Number(document.getElementById("sub2").value);
+        var sub3 = Number(document.getElementById("sub3").value);
+        var sub4 = Number(document.getElementById("sub4").value);
+        var sub5 = Number(document.getElementById("sub5").value);
+        var sub6 = Number(document.getElementById("sub6").value);
+        var sub7 = Number(document.getElementById("sub7").value);
+        var total = sub1 + sub2 + sub3 + sub4 + sub5 + sub6 + sub7;
+        document.getElementById("total").innerHTML = total;
+        var per = (total/350)*100 + "%";
+        document.getElementById("percent").innerHTML = per;
+    }
+</script>
+
+</body>
+</html>
